@@ -4,6 +4,8 @@ daemon:x:2:
 wheel:x:10:en
 sshd:x:22:
 shadow:x:42:
+www-data:x:80:
+nginx:x:82:
 abuild:x:180:en
 en:x:500:
 nogroup:x:65533:

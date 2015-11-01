@@ -2,6 +2,7 @@ curl
 git
 irssi
 mosh
+nginx
 openssh
 rsync
 socat
