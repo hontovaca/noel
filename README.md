@@ -6,10 +6,10 @@ My canonical example image is vaca/sshd, which is basically the same thing as th
 
 ### Undocumented snippets
 
-    docker run -d --name=noel --hostname=noel -v /home:/home -v /var/log -v /etc/ssh cows/env #100.95.82.248
+    docker run -d --restart=always --name=noel --hostname=noel -v /home:/home -v /var/log -v /etc/ssh cows/env #100.95.82.248
 
     docker pull cows/env
-    new=`docker create --hostname=noel --volumes-from=noel cows/env`
+    new=`docker create --restart=always --hostname=noel --volumes-from=noel cows/env`
     docker stop noel
     docker start "$new"
     docker rename noel "noel_${new:0:12}"
