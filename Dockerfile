@@ -1,4 +1,4 @@
 FROM vaca/rc
 
 COPY over /
-RUN /root/after
+RUN ["/root/after"]
