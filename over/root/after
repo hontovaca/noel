@@ -1,0 +1,6 @@
+#!/usr/bin/execlineb -P
+if { chown root:shadow /etc/shadow }
+if { chmod 0640 /etc/shadow }
+if { redirfd -c 1 /etc/apk/world cat /root/world }
+if { apk -U fix }
+rm -f /var/cache/apk/*
