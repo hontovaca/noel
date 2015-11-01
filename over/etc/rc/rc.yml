@@ -1,0 +1,6 @@
+'1':
+  contents: syslogd
+'2':
+  contents: crond
+'3':
+  contents: sshd

@@ -1,0 +1,16 @@
+sshd:
+  type: longrun
+  producer-for: sshd-log
+  run: |
+    #!/usr/bin/execlineb -P
+    fdmove -c 2 1
+    if { ssh-keygen -A }
+    /usr/sbin/sshd -De
+
+sshd-log:
+  type: longrun
+  consumer-for: sshd
+  run: |
+    #!/usr/bin/execlineb -P
+    s6-setuidgid daemon
+    s6-log t /var/log/sshd

@@ -1,0 +1,10 @@
+root:x:0:
+bin:x:1:
+daemon:x:2:
+wheel:x:10:en
+sshd:x:22:
+shadow:x:42:
+abuild:x:180:en
+en:x:500:
+nogroup:x:65533:
+nobody:x:65534:
