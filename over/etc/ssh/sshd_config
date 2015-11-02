@@ -135,6 +135,9 @@ Subsystem	sftp	/usr/lib/ssh/sftp-server
 # buffer size for hpn to non-hpn connections
 #HPNBufferSize 2048
 
+# allow receiving locale information
+AcceptEnv LANG LC_*
+
 # Example of overriding settings on a per-user basis
 #Match User anoncvs
 #	X11Forwarding no
