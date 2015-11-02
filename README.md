@@ -12,5 +12,5 @@ My canonical example image is vaca/sshd, which is basically the same thing as th
     new=`docker create --restart=always --hostname=noel --volumes-from=noel cows/env`
     docker stop noel
     docker start "$new"
-    docker rename noel "noel_${new:0:12}"
+    docker rm noel
     docker rename "$new" noel
