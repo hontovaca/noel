@@ -1,7 +1,7 @@
 rc.sshd:merge {
   type = "longrun",
   producer_for = "sshd-log",
-  run = util.realign [[
+  run = realign [[
     #!/usr/bin/execlineb -P
     fdmove -c 2 1
     if { ssh-keygen -A }
@@ -12,7 +12,7 @@ rc.sshd:merge {
 rc.sshd_log:merge {
   type = "longrun",
   consumer_for = "sshd",
-  run = util.realign [[
+  run = realign [[
     #!/usr/bin/execlineb -P
     s6-setuidgid daemon
     s6-log 1 t /var/log/sshd
