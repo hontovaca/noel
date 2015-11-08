@@ -3,10 +3,8 @@ git
 irssi
 mosh
 nginx
-openssh
 rsync
 socat
-sudo
 tmux
 vim
 xz

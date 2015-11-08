@@ -1,4 +1,0 @@
-# valid login shells
-/etc/try-shells
-/bin/sh
-/bin/ash

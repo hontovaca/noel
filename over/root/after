@@ -1,6 +1,8 @@
-#!/usr/bin/execlineb -P
-if { chown root:shadow /etc/shadow }
-if { chmod 0640 /etc/shadow }
+#!/usr/bin/execlineb -S0
+if { redirfd -c 1 /etc/group  cat /root/group }
+if { redirfd -c 1 /etc/passwd cat /root/passwd }
+if { redirfd -c 1 /etc/shadow cat /root/shadow }
 if { redirfd -c 1 /etc/apk/world cat /root/world }
 if { apk -U fix }
-elglob apkix /var/cache/apk/* rm -f $apkix
+if { elglob apkix /var/cache/apk/* rm -f $apkix }
+rm /root/group /root/passwd /root/shadow /root/world $0
