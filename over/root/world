@@ -1,6 +1,7 @@
 curl
 git
 irssi
+less
 mosh
 nginx
 rsync
