@@ -1,8 +1,8 @@
 #!/usr/bin/execlineb -S0
-if { redirfd -c 1 /etc/group  cat /root/group }
-if { redirfd -c 1 /etc/passwd cat /root/passwd }
-if { redirfd -c 1 /etc/shadow cat /root/shadow }
+if { ensure_group wheel:en www-data=80:nginx nginx=82 abuild=180:en en }
+if { ensure_passwd nginx=82 en@/home/en!/bin/prefsh:ammunta }
+if { ensure_shadow nginx en:* }
 if { redirfd -c 1 /etc/apk/world cat /root/world }
 if { apk -U fix }
 if { elglob apkix /var/cache/apk/* rm -f $apkix }
-rm /root/group /root/passwd /root/shadow /root/world $0
+rm /root/world $0
