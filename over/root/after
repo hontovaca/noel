@@ -4,5 +4,6 @@ if { ensure_passwd nginx=82 en@/home/en!/bin/prefsh:ammunta }
 if { ensure_shadow nginx en:* }
 if { redirfd -c 1 /etc/apk/world cat /root/world }
 if { apk -U fix }
-if { elglob apkix /var/cache/apk/* rm -f $apkix }
-rm /root/world $0
+elglob -0 apkix /var/cache/apk/*
+elglob -0 etcbak /etc/*-
+rm /root/world $apkix $etcbak $0
