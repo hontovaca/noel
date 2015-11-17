@@ -1,4 +1,4 @@
-#!/usr/bin/execlineb -S0
+#!/bin/execlineb -S0
 if { ensure_group wheel:en www-data=80:nginx nginx=82 abuild=180:en en }
 if { ensure_passwd nginx=82:nginx en@/home/en!/bin/prefsh:ammunta }
 if { ensure_shadow nginx en:* }
